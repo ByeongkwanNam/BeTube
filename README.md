@@ -20,3 +20,10 @@ cloning YouTube with Vanilla and NodeJS
     3. `cookie-parser and body-parser`: to handle cookie and body way I want
 
 * Router: Model에 따른 다양한 route 구성 가능.
+    * `반복되는 정보는 한 곳에 모은다`: routes.js 에 URL 정보를 모아두면 url 주소 변경 시 routes.js만 수정하면 될 뿐더러 조회하기도 쉽다.
+
+* Controller
+    * 가급적 routes와 이름을 유사하게 해주면 편함.
+
+* View
+    * `app.set('view engine', "pug")`: view engine을 pug로 설정하겠다는 의미. views 폴더 안의 pug 파일을 자동으로 찾아주고, res.render(home)과 같은 명령이 가능해진다. (참고: [express.js > application > app.set](http://expressjs.com/en/api.html#app.set))
