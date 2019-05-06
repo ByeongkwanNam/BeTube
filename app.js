@@ -3,36 +3,24 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
-import { userRouter } from './router';
+import userRouter from './routers/userRouter';
+import videoRouter from './routers/videoRouter';
+import globalRouter from './routers/globalRouter';
+import routes from './routes';
+
 
 const app = express();
 
-const handleHome = (req, res) => {
-    console.log("Hi from home");
-    res.send("Hello From Home");
-}
+app.set('view engine', "pug");
 
-const handleProfile = (req, res) => res.send("You are asdfon my profile.");
-
-const handleBetween = (req, res, next) => {
-    next();
-    console.log("I'm between");
-    
-}
-
-/*
-    Middleware > Route 처리
-    IP 차단 등에 사용될 수 있음.
-*/
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(morgan("tiny"));
 app.use(helmet());
 
-app.get("/", handleHome);
-app.get("/profile", handleProfile);
-
-app.use("/user", userRouter);
+app.use(routes.home, globalRouter);
+app.use(routes.users, userRouter);
+app.use(routes.videos, videoRouter);
 
 export default app;
