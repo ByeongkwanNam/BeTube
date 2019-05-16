@@ -54,3 +54,7 @@ cloning YouTube with Vanilla and NodeJS
 *   Mongoose: MongoDB와 Javascript 간 Adapter
 
     -   useNewUrlParser와 같은 옵션은 새로운 버전에서 디폴트로 요구하는 사항.
+
+*   .env 활용: PORT, MONGO_URL과 같은 정보들을 숨긴다. .gitignore 등록 필수
+
+*   models: export default를 사용했으므로 webpack에 의해 결국엔 다른 이름으로 변경된다. 따라서 model 이름의 재사용에는 문제가 없다.

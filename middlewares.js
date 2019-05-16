@@ -1,5 +1,7 @@
 import routes from "./routes";
-import { EROFS } from "constants";
+import multer from "multer";
+
+const multerVideo = multer({ dest: "videoList/" });
 
 export const localsMiddleware = (req, res, next) => {
     res.locals.siteName = "BeTube";
@@ -10,3 +12,5 @@ export const localsMiddleware = (req, res, next) => {
     };
     next(); // don't forget this.
 };
+
+export const uploadVideo = multerVideo.single("videoFile");
