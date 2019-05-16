@@ -25,14 +25,38 @@ const routes = {
     logout: LOGOUT,
     search: SEARCH,
     users: USERS,
-    userDetail: USER_DETAIL,
+    userDetail: id => {
+        if (id) {
+            return `/${id}`;
+        } else {
+            return USER_DETAIL;
+        }
+    },
     editProfile: EDIT_PROFILE,
     changePassword: CHANGE_PASSWORD,
     videos: VIDEOS,
-    videoDetail: VIDEO_DETAIL,
-    videoDelete: VIDEO_DELETE,
-    videoEdit: VIDEO_EDIT,
+    videoDetail: id => {
+        if (id) {
+            return `/${id}`;
+        } else {
+            return VIDEO_DETAIL;
+        }
+    },
+    videoDelete: id => {
+        if (id) {
+            return `/${id}/delete`;
+        } else {
+            return VIDEO_DELETE;
+        }
+    },
+    videoEdit: id => {
+        if (id) {
+            return `/${id}/edit`;
+        } else {
+            return VIDEO_EDIT;
+        }
+    },
     videoUpload: VIDEO_UPLOAD
-}
+};
 
 export default routes;

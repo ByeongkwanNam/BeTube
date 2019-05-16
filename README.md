@@ -46,3 +46,11 @@ cloning YouTube with Vanilla and NodeJS
 
 -   View
     -   `app.set('view engine', "pug")`: view engine을 pug로 설정하겠다는 의미. views 폴더 안의 pug 파일을 자동으로 찾아주고, res.render(home)과 같은 명령이 가능해진다. (참고: [express.js > application > app.set](http://expressjs.com/en/api.html#app.set))
+
+### 5월 16일 (목)
+
+-   MongoDB 설치에 너무 오랜 시간 걸림. Xcode와 OS 업데이트가 문제
+
+*   Mongoose: MongoDB와 Javascript 간 Adapter
+
+    -   useNewUrlParser와 같은 옵션은 새로운 버전에서 디폴트로 요구하는 사항.

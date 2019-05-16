@@ -1,5 +1,14 @@
 extends layouts/main
+include mixins/videoBlock
 
 block content
     .search__header
         h4 Searching for: #{keyword}
+    .search__videos
+        each item in videoList
+            +videoBlock({
+                id: item.id,
+                title: item.title,
+                description: item.description,
+                videoFile: item.videoFile
+            })
